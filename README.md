@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+# Welcome to CRYPTO WALLET FOR NEWBIES 
 
 ## Project info
 
@@ -8,7 +8,7 @@
 
 There are several ways of editing your application.
 
-**Use Lovable**
+
 
 Simply visit the [Lovable Project](https://lovable.dev/projects/b6f1dce9-5550-453e-9824-d03338119898) and start prompting.
 
