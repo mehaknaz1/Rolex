@@ -2,43 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Crypto Wallet Design System - Beginner-Friendly & Gamified */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Crypto-themed color palette */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Bitcoin-inspired gold */
+    --primary: 45 93% 58%;
+    --primary-foreground: 240 10% 3.9%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Ethereum-inspired blue */
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Success green for profits */
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 45 93% 58%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Crypto-themed gradients */
+    --gradient-crypto: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--accent)), hsl(142 76% 46%));
+    --gradient-card: linear-gradient(135deg, hsl(240 10% 4.9%), hsl(240 8% 6%));
+    
+    /* Achievement colors */
+    --achievement-bronze: 30 100% 50%;
+    --achievement-silver: 0 0% 75%;
+    --achievement-gold: 45 93% 58%;
+    
+    /* Sidebar for crypto theme */
+    --sidebar-background: 240 10% 3.9%;
 
     --sidebar-foreground: 240 5.3% 26.1%;
 
@@ -101,5 +114,65 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Crypto Wallet Animations & Effects */
+@layer utilities {
+  .gradient-crypto {
+    background: var(--gradient-crypto);
+  }
+  
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .crypto-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  
+  .achievement-glow {
+    box-shadow: 0 0 15px hsl(var(--achievement-gold) / 0.4);
+  }
+  
+  .pulse-crypto {
+    animation: pulse-crypto 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-crypto {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 10px hsl(var(--primary) / 0);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .slide-in-up {
+    animation: slideInUp 0.5s ease-out;
   }
 }

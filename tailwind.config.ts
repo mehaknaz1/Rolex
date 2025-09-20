@@ -47,21 +47,16 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        achievement: {
+          bronze: "hsl(var(--achievement-bronze))",
+          silver: "hsl(var(--achievement-silver))",
+          gold: "hsl(var(--achievement-gold))",
         },
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+      backgroundImage: {
+        "gradient-crypto": "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)))",
+        "gradient-success": "linear-gradient(135deg, hsl(var(--accent)), hsl(142 76% 46%))",
+        "gradient-card": "linear-gradient(135deg, hsl(240 10% 4.9%), hsl(240 8% 6%))",
       },
       keyframes: {
         "accordion-down": {
@@ -80,10 +75,35 @@ export default {
             height: "0",
           },
         },
+        "pulse-crypto": {
+          "0%, 100%": {
+            "box-shadow": "0 0 0 0 hsl(var(--primary) / 0.7)",
+          },
+          "50%": {
+            "box-shadow": "0 0 0 10px hsl(var(--primary) / 0)",
+          },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        "slide-in-up": {
+          from: {
+            opacity: "0",
+            transform: "translateY(30px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-crypto": "pulse-crypto 2s ease-in-out infinite",
+        "float": "float 3s ease-in-out infinite",
+        "slide-in-up": "slide-in-up 0.5s ease-out",
       },
     },
   },
